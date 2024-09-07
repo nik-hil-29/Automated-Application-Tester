@@ -52,9 +52,10 @@ Pre-conditions: Any setup or requirements that need to be in place before testin
 Testing Steps: Clear, step-by-step instructions on how to perform the test.
 Edge Cases: Consider edge cases that could break the functionality.
 Expected Result: What should happen if the feature works correctly.
+
+
 Example 1: E-commerce Product Checkout
 Input: A screenshot of the checkout page from an e-commerce website.
-
 Generated Test Case:
 
 Description: Verify that the user can complete a purchase through the checkout page.
@@ -74,9 +75,10 @@ Apply an expired discount code.
 Expected Result:
 The order confirmation page should be displayed with a summary of the order details.
 The order should be processed, and the user should receive a confirmation email.
+
+
 Example 2: Social Media Post Creation
 Input: A screenshot of the post creation screen from a social media platform.
-
 Generated Test Case:
 
 Description: Verify that the user can create and publish a post on the social media platform.
@@ -95,9 +97,10 @@ Add invalid hashtags or tags.
 Expected Result:
 The post should appear on the user’s profile and in the feeds of tagged users or selected audience.
 The post should be visible with the correct content and media.
+
+
 Example 3: Banking Mobile App Funds Transfer
 Input: A screenshot of the funds transfer screen from a banking mobile app.
-
 Generated Test Case:
 
 Description: Verify that the user can successfully transfer funds between accounts.
