@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Application Tester</title>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Automated Application Tester</h2>
+
+        <form id="upload-form" enctype="multipart/form-data">
+            <!-- Optional Context Input -->
+            <label for="context">Optional Context</label>
+            <textarea id="context" name="context" rows="4" cols="50" placeholder="Enter any optional context here..."></textarea>
+
+            <!-- Multi Image Upload -->
+            <label for="images">Upload Screenshots (One or Multiple)</label>
+            <input type="file" id="images" name="images" accept="image/*" multiple>
+
+            <!-- Uploaded Images Preview List -->
+            <ul id="uploaded-images-list"></ul>
+
+            <!-- Submit Button -->
+            <button type="submit">Describe Testing Instructions</button>
+            <button type="button" id="refresh-btn">Clear All</button> <!-- Clear button to reset the form -->
+        </form>
+
+        <!-- Processing Time Display -->
+        <div id="processing-time"></div>
+
+        <!-- Result Section -->
+        <h3>Testing Instructions:</h3>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        // Maintain a list of all files uploaded
+        const uploadedFiles = [];
+        const uploadedImagesList = document.getElementById('uploaded-images-list');
+
+        document.getElementById('images').addEventListener('change', function(event) {
+            const files = event.target.files;
+
+            // Add the newly uploaded file(s) to the uploadedFiles array
+            for (let i = 0; i < files.length; i++) {
+                uploadedFiles.push(files[i]);
+
+                // Display the file in the list
+                const listItem = document.createElement('li');
+                listItem.textContent = `File: ${files[i].name}`;
+                uploadedImagesList.appendChild(listItem);
+            }
+
+            // Clear the file input after each selection
+            document.getElementById('images').value = '';
+        });
+
+        document.getElementById('upload-form').addEventListener('submit', async function(event) {
+            event.preventDefault();  // Prevent form submission
+
+            // Prepare the FormData to send to the backend
+            const formData = new FormData();
+            for (let i = 0; i < uploadedFiles.length; i++) {
+                formData.append('images', uploadedFiles[i]);
+            }
+            formData.append('context', document.getElementById('context').value);
+
+            // Display processing message
+            document.getElementById('processing-time').textContent = "Processing...";
+
+            // Send a POST request to the backend
+            const startTime = performance.now();
+            const response = await fetch('/process-images', {
+                method: 'POST',
+                body: formData
+            });
+
+            // Calculate processing time
+            const endTime = performance.now();
+            const processingTime = ((endTime - startTime) / 1000).toFixed(2);
+            document.getElementById('processing-time').textContent = `Processing time: ${processingTime} seconds`;
+
+            // Get the result and display it on the page
+            const result = await response.text();
+            document.getElementById('result').textContent = result;
+        });
+
+        // Clear all the data (uploaded files, form input, result)
+        document.getElementById('refresh-btn').addEventListener('click', function() {
+            uploadedFiles.length = 0;  // Clear uploadedFiles array
+            document.getElementById('uploaded-images-list').innerHTML = '';  // Clear the displayed list
+            document.getElementById('result').textContent = '';  // Clear the result section
+            document.getElementById('processing-time').textContent = '';  // Clear the processing time
+            document.getElementById('upload-form').reset();  // Reset the form inputs
+        });
+    </script>
+
+</body>
+</html>
