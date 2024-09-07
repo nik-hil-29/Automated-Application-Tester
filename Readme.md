@@ -46,7 +46,7 @@ Bus Selection
 Seat Selection
 Pick-up and Drop-off Point Selection
 Offers and Discounts
-
+# You can checkout the explanation of the project here : https://www.loom.com/share/45f0873642c34501b7a0892efa90514f?sid=c9293847-799a-43c0-9ffc-18ee5020ca2f
 # Screenshots:
 <img width="1410" alt="Screenshot 2024-09-08 at 1 24 03 AM" src="https://github.com/user-attachments/assets/f95c25bf-8e49-4d29-9705-593aed5ead22">
 
