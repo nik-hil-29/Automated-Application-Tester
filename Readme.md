@@ -46,3 +46,16 @@ Bus Selection
 Seat Selection
 Pick-up and Drop-off Point Selection
 Offers and Discounts
+
+# Screenshots:
+<img width="1410" alt="Screenshot 2024-09-08 at 1 24 03 AM" src="https://github.com/user-attachments/assets/f95c25bf-8e49-4d29-9705-593aed5ead22">
+
+<img width="1436" alt="Screenshot 2024-09-08 at 1 25 03 AM" src="https://github.com/user-attachments/assets/c5c895d5-313b-4c91-9be8-c12c901e49e4">
+
+<img width="1399" alt="Screenshot 2024-09-08 at 1 25 12 AM" src="https://github.com/user-attachments/assets/f23fd9f5-eddb-4589-bac0-6b029bb58c63">
+
+<img width="1417" alt="Screenshot 2024-09-08 at 1 25 28 AM" src="https://github.com/user-attachments/assets/d48916b4-12bf-4c1c-a2fb-206903b92a5a">
+
+<img width="1409" alt="Screenshot 2024-09-08 at 1 25 38 AM" src="https://github.com/user-attachments/assets/66a51903-d74a-45fd-8c3a-26f5ad5e9bec">
+
+
