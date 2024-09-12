@@ -1,4 +1,5 @@
-# Multimodal AI Test Case Generator
+# Automated Application Tester
+
 
 This project is a tool that uses a multimodal large language model (LLM) to automatically generate detailed test cases for any digital product's features based on screenshots. The goal of this tool is to assist testers by analyzing screenshots of an application's user interface (UI) and generating testing instructions in a structured format.
 
